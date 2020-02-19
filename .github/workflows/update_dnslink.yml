@@ -1,0 +1,20 @@
+name: update_dnslink
+on:
+  release:
+    types: [created]
+
+jobs:
+  update_dnslink:
+    runs-on: ubuntu-latest
+    name: Update a DNSLink
+    steps:
+    - name: Update DNSLink
+      env:
+        CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+        CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        RECORD_DOMAIN: ${{ secrets.DOMAIN_NAME }}
+        RECORD_NAME: '_dnslink.${{ secrets.SUBDOMAIN }}'
+      id: dnslink
+      uses: textileio/cloudflare-update-dnslink@master
+      with:
+        cid: 'Qmf65nLokMjpkQjzgs68ik5AuHSu7NVSjSiGtko5ABp6FY'
