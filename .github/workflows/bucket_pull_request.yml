@@ -1,0 +1,27 @@
+name: bucket_pull_request
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  bucket_pull_request:
+    runs-on: ubuntu-latest
+    name: Create a Textile Bucket
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Build Gatsby Site
+      uses: jzweifel/gatsby-cli-github-action@master
+      with:
+        gatsby-arg: build
+    - name: Bucket push action
+      id: push
+      uses: textileio/github-action-bucket-push@master
+      with:
+        bucket-name: '${{ secrets.BUCKET_NAME }}-${{ github.event.pull_request.id }}'
+        path: 'public/*'
+        token: ${{ secrets.TEXTILE_AUTH_TOKEN }}
+    - name: Get the output CID
+      run: echo "The CID was ${{ steps.push.outputs.cid }}"
+    - name: Get the Bucket URL
+      run: echo "The Bucket URL is ${{ steps.push.outputs.url }}"
