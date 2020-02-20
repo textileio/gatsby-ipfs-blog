@@ -38,13 +38,28 @@ This will create a hidden folder in your repo `.textile/`. You need to add and c
 
 | NAME | Example | Description|
 |------|-------|----------|
-| BUCKET_NAME | `my-famous-blog` | A globally unique name for your blog, containing no spaces or special characters |
 | TEXTILE_AUTH_TOKEN | `f7be8d8e-2bf5-4218-ba09-d0622e917e7f` | Your private auth token for Textile. Do not share. You can find it on your local computer in your home dir. E.g. `cat ~/.textile/auth.yml` |
 | DOMAIN_NAME | `textile.io` | (OPTIONAL) The raw domain you want to update on Cloudflare |
 | SUBDOMAIN | `blog` | (OPTIONAL) The subdomain on your site currently setup to use DNSLink. A DNSLink must exist for this record for the update to start working. [see here](https://blog.textile.io/ethden-using-ci-to-publish-your-webpage-using-ipfs-and-textile-buckets/). |
 | SUBDOMAIN | `blog` | (OPTIONAL) The subdomain on your site currently setup to use DNSLink. A DNSLink must exist for this record for the update to start working. [see here](https://blog.textile.io/ethden-using-ci-to-publish-your-webpage-using-ipfs-and-textile-buckets/). |
 | CLOUDFLARE_TOKEN | `` | (OPTIONAL) Cloudflare token capable of updating your DNS records, [see here](https://blog.textile.io/ethden-using-ci-to-publish-your-webpage-using-ipfs-and-textile-buckets/). |
 | CLOUDFLARE_ZONE_ID | `` | (OPTIONAL) Zone Id of your domain on Cloudflare, [see here](https://blog.textile.io/ethden-using-ci-to-publish-your-webpage-using-ipfs-and-textile-buckets/). |
+
+## Update your GitHub Actions
+
+There is a value in each of the four workflows you need to update. You can find those files in,
+
+* .github/workflows/bucket_pull_request.yml
+* .github/workflows/bucket_remove.yml
+* .github/workflows/bucket_publish.yml
+* .github/workflows/bucket_release.yml
+  
+In each of those files, change the value for `BUCKET_NAME` from `'gatsby-ipfs-blog'` to your unique bucket name.
+
+| NAME | Example | Description|
+|------|-------|----------|
+| BUCKET_NAME | `my-famous-blog` | A globally unique name for your blog, containing no spaces or special characters |
+
 
 ## Create a Pull Request
 
