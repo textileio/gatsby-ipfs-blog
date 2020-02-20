@@ -60,6 +60,9 @@ In each of those files, change the value for `BUCKET_NAME` from `'gatsby-ipfs-bl
 |------|-------|----------|
 | BUCKET_NAME | `my-famous-blog` | A globally unique name for your blog, containing no spaces or special characters |
 
+## Custom Gatsby Builds
+
+If your Gatsby builds someplace other than the `public` directory, you need to change each of the above workflow files, updating the Bucket step field called `path` to be your path not the current `public` path.
 
 ## Create a Pull Request
 
