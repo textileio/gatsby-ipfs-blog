@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Gatsby on IPFS`,
+    author: `Andrew Hill`,
+    description: `A starter blog demonstrating what Gatsby can do and how to host it on IPFS.`,
+    siteUrl: `https://gatsby-ipfs-blog.textile.cafe/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `textileio`,
     },
   },
   plugins: [
