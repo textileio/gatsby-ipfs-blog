@@ -5,10 +5,10 @@ on:
       - master
 jobs:
   bucket_pull_request:
-    runs-on: ubuntu-latest
-    name: Create a Textile Bucket
     env:
       BUCKET_NAME: 'gatsby-ipfs-blog'
+    runs-on: ubuntu-latest
+    name: Create a Textile Bucket
     steps:
     - name: Checkout
       uses: actions/checkout@v1
