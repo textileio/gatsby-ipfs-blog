@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby on IPFS`,
-    author: `Andrew Hill`,
+    author: `Textile`,
     description: `A starter blog demonstrating what Gatsby can do and how to host it on IPFS.`,
     siteUrl: `https://gatsby-ipfs-blog.textile.cafe/`,
     social: {
