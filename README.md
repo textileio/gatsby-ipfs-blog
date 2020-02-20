@@ -1,3 +1,22 @@
+# What is this?
+
+This is a demo Gatsby blog that provides the Github Actions setup to handle CI for testing, publishing, and updating your Gatsby blog on IPFS using Textile Buckets.
+
+Here's how it works.
+
+1. You can use any Gatsby project, but the repo provides a simple starter.
+2. Each time you update your project, for example with a new blog post, you can open a PR to your project on Github. Your PR will kickoff an action that will build your site and push it to IPFS as a Textile Bucket. You will get a temporary URL to view your site live.
+3. If you push changes to your Pull Request the temporary bucket will update for live viewing of your changes.
+4. When you close or merge your PR that temporary Bucket and URL will be removed.
+5. When you merge or commit into Master, your primary Bucket with a static URL will be updated.
+6. If you create a release on your project in Github, you can use your latest Bucket CID to update your live website at your custom URL.
+
+_What are Buckets?_
+
+Buckets are a file organization and pinning service built on Textile Threads, meaning they are dynamic folders of your files pinned to IPFS. Textile can provide a simple static URL for your Bucket to view the data online or render website content.
+
+Read our [hackathon tutorial for buckets here](https://blog.textile.io/ethden-come-learn-how-to-publish-dynamic-ipfs-buckets-on-textile/).
+
 # Setup
 
 ## Clone
@@ -49,10 +68,10 @@ This will create a hidden folder in your repo `.textile/`. You need to add and c
 
 There is a value in each of the four workflows you need to update. You can find those files in,
 
-* .github/workflows/bucket_pull_request.yml
-* .github/workflows/bucket_remove.yml
-* .github/workflows/bucket_publish.yml
-* .github/workflows/bucket_release.yml
+* [.github/workflows/bucket_pull_request.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_pull_request.yml)
+* [.github/workflows/bucket_remove.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_remove.yml)
+* [.github/workflows/bucket_publish.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_publish.yml)
+* [.github/workflows/bucket_release.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_release.yml)
   
 In each of those files, change the value for `BUCKET_NAME` from `'gatsby-ipfs-blog'` to your unique bucket name.
 
@@ -60,6 +79,9 @@ In each of those files, change the value for `BUCKET_NAME` from `'gatsby-ipfs-bl
 |------|-------|----------|
 | BUCKET_NAME | `my-famous-blog` | A globally unique name for your blog, containing no spaces or special characters |
 
+## Custom Gatsby Builds
+
+If your Gatsby builds someplace other than the `public` directory, you need to change each of the above workflow files, updating the Bucket step field called `path` to be your path not the current `public` path.
 
 ## Create a Pull Request
 
