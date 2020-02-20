@@ -7,9 +7,8 @@ jobs:
   bucket_pull_request:
     runs-on: ubuntu-latest
     name: Create a Textile Bucket
-    build:
-      env:
-        BUCKET_NAME: 'gatsby-ipfs-blog'
+    env:
+      BUCKET_NAME: 'gatsby-ipfs-blog'
     steps:
     - name: Checkout
       uses: actions/checkout@v1
