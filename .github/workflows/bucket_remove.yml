@@ -5,6 +5,8 @@ on:
 
 jobs:
   bucket_push:
+    env:
+      BUCKET_NAME: 'gatsby-ipfs-blog'
     runs-on: ubuntu-latest
     name: Remove a Textile Bucket
     steps:
@@ -14,5 +16,5 @@ jobs:
       id: push
       uses: textileio/github-action-bucket-remove@master
       with:
-        bucket-name: '${{ secrets.BUCKET_NAME }}-${{ github.event.pull_request.id }}'
+        bucket-name: '${{ env.BUCKET_NAME }}-${{ github.event.pull_request.id }}'
         token: ${{ secrets.TEXTILE_AUTH_TOKEN }}

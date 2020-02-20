@@ -5,6 +5,8 @@ on:
       - master
 jobs:
   bucket_publish:
+    env:
+      BUCKET_NAME: 'gatsby-ipfs-blog'
     runs-on: ubuntu-latest
     name: Create a Textile Bucket
     steps:
@@ -18,7 +20,7 @@ jobs:
       id: push
       uses: textileio/github-action-bucket-push@master
       with:
-        bucket-name: '${{ secrets.BUCKET_NAME }}'
+        bucket-name: '${{ env.BUCKET_NAME }}'
         path: 'public/*'
         token: ${{ secrets.TEXTILE_AUTH_TOKEN }}
     # Use the output from the `hello` step

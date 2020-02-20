@@ -7,7 +7,22 @@ jobs:
   update_dnslink:
     runs-on: ubuntu-latest
     name: Update a DNSLink
+    env:
+      BUCKET_NAME: 'gatsby-ipfs-blog'
     steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Build Gatsby Site
+      uses: jzweifel/gatsby-cli-github-action@master
+      with:
+        gatsby-arg: build
+    - name: Bucket push action
+      id: push
+      uses: textileio/github-action-bucket-push@master
+      with:
+        bucket-name: '${{ env.BUCKET_NAME }}'
+        path: 'public/*'
+        token: ${{ secrets.TEXTILE_AUTH_TOKEN }}
     - name: Update DNSLink
       env:
         CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
@@ -17,4 +32,4 @@ jobs:
       id: dnslink
       uses: textileio/cloudflare-update-dnslink@master
       with:
-        cid: 'Qmf65nLokMjpkQjzgs68ik5AuHSu7NVSjSiGtko5ABp6FY'
+        cid: '${{ steps.push.outputs.cid }}'
