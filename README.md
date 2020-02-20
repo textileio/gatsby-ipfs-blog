@@ -6,9 +6,10 @@ Here's how it works.
 
 1. You can use any Gatsby project, but the repo provides a simple starter.
 2. Each time you update your project, for example with a new blog post, you can open a PR to your project on Github. Your PR will kickoff an action that will build your site and push it to IPFS as a Textile Bucket. You will get a temporary URL to view your site live.
-3. When you close or merge your PR that temporary Bucket and URL will be removed.
-4. When you merge or commit into Master, your primary Bucket with a static URL will be udpated.
-5. If you create a release on your project in Github, you can use your latest Bucket CID to update your live website at your custom URL.
+3. If you push changes to your Pull Request the temporary bucket will update for live viewing of your changes.
+4. When you close or merge your PR that temporary Bucket and URL will be removed.
+5. When you merge or commit into Master, your primary Bucket with a static URL will be updated.
+6. If you create a release on your project in Github, you can use your latest Bucket CID to update your live website at your custom URL.
 
 _What are Buckets?_
 
