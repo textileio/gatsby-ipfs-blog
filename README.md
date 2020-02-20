@@ -17,6 +17,36 @@ Buckets are a file organization and pinning service built on Textile Threads, me
 
 Read our [hackathon tutorial for buckets here](https://blog.textile.io/ethden-come-learn-how-to-publish-dynamic-ipfs-buckets-on-textile/).
 
+## In action
+
+You can see how this site works here.
+
+The BUCKET_NAME for this example project is: `gatsby-ipfs-blog`.
+
+### Pull Request
+
+An open pull request triggers a CI job that will generate a temporary Bucket. [Here is an example](https://github.com/textileio/gatsby-ipfs-blog/pull/3). You can see that in the Action there is a final output that looks like,
+
+```
+The Bucket URL is https://gatsby-ipfs-blog-377515556.textile.cafe/
+```
+
+You can visit the temporary bucket here, [https://gatsby-ipfs-blog-377515556.textile.cafe/](https://gatsby-ipfs-blog-377515556.textile.cafe/). In the example Pull Request, there is a new blog post added to the site. The site is fully functional, so [here is the new post to review](https://gatsby-ipfs-blog-377515556.textile.cafe/textile-buckets/).
+
+### Merge
+
+When any Pull Request is merged into master, a different Action is kicked off that will update the root bucket available at:
+
+[https://gatsby-ipfs-blog.textile.cafe/](https://gatsby-ipfs-blog.textile.cafe/)
+
+Here is an [example of the Action that updated our live site](https://github.com/textileio/gatsby-ipfs-blog/runs/456779082?check_suite_focus=true).
+
+So to update our site with the changes in our PR above, all that we need to do is merge it!
+
+### Publish
+
+If we want to update our own domain, we can finally create a Release in GitHub that will update our Cloudflare records with the latest CID of our root bucket, allowing you to run your site right from IPFS.
+
 # Setup
 
 ## Clone
