@@ -1,4 +1,4 @@
-# What
+# What is this?
 
 This is a demo Gatsby blog that provides the Github Actions setup to handle CI for testing, publishing, and updating your Gatsby blog on IPFS using Textile Buckets.
 
