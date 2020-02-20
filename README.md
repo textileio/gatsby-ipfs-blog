@@ -1,3 +1,21 @@
+# What
+
+This is a demo Gatsby blog that provides the Github Actions setup to handle CI for testing, publishing, and updating your Gatsby blog on IPFS using Textile Buckets.
+
+Here's how it works.
+
+1. You can use any Gatsby project, but the repo provides a simple starter.
+2. Each time you update your project, for example with a new blog post, you can open a PR to your project on Github. Your PR will kickoff an action that will build your site and push it to IPFS as a Textile Bucket. You will get a temporary URL to view your site live.
+3. When you close or merge your PR that temporary Bucket and URL will be removed.
+4. When you merge or commit into Master, your primary Bucket with a static URL will be udpated.
+5. If you create a release on your project in Github, you can use your latest Bucket CID to update your live website at your custom URL.
+
+_What are Buckets?_
+
+Buckets are a file organization and pinning service built on Textile Threads, meaning they are dynamic folders of your files pinned to IPFS. Textile can provide a simple static URL for your Bucket to view the data online or render website content.
+
+Read our [hackathon tutorial for buckets here](https://blog.textile.io/ethden-come-learn-how-to-publish-dynamic-ipfs-buckets-on-textile/).
+
 # Setup
 
 ## Clone
