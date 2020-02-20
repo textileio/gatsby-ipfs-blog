@@ -1,10 +1,10 @@
-name: bucket_push
+name: bucket_remove
 on:
   pull_request:
     types: ['closed']
 
 jobs:
-  bucket_push:
+  bucket_remove:
     env:
       BUCKET_NAME: 'gatsby-ipfs-blog'
     runs-on: ubuntu-latest
