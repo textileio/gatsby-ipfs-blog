@@ -20,7 +20,7 @@ jobs:
       id: push
       uses: textileio/github-action-bucket-push@master
       with:
-        bucket-name: '${{ BUCKET_NAME }}-${{ github.event.pull_request.id }}'
+        bucket-name: '${{ $BUCKET_NAME }}-${{ github.event.pull_request.id }}'
         path: 'public/*'
         token: ${{ secrets.TEXTILE_AUTH_TOKEN }}
     - name: Get the output CID
