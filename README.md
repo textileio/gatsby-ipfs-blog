@@ -101,7 +101,7 @@ There is a value in each of the four workflows you need to update. You can find 
 * [.github/workflows/bucket_pull_request.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_pull_request.yml)
 * [.github/workflows/bucket_remove.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_remove.yml)
 * [.github/workflows/bucket_publish.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_publish.yml)
-* [.github/workflows/bucket_release.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/bucket_release.yml)
+* [.github/workflows/update_dnslink.yml](https://github.com/textileio/gatsby-ipfs-blog/blob/master/.github/workflows/update_dnslink.yml)
   
 In each of those files, change the value for `BUCKET_NAME` from `'gatsby-ipfs-blog'` to your unique bucket name.
 
