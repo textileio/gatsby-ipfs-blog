@@ -2,6 +2,8 @@
 
 This is a demo Gatsby blog that provides the Github Actions setup to handle CI for testing, publishing, and updating your Gatsby blog on IPFS using Textile Buckets.
 
+![buckets](https://2020-hackathon.textile.cafe/gatsby-bucket-flow.png)
+
 Here's how it works.
 
 1. You can use any Gatsby project, but the repo provides a simple starter.
