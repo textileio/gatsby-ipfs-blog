@@ -165,4 +165,4 @@ select `npm` when prompted
 
 ### Install Bucket CI for Gatsby
 
-@todo
+See here https://blog.textile.io/ethden-using-ci-to-publish-your-webpage-using-ipfs-and-textile-buckets/
