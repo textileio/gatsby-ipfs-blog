@@ -71,15 +71,39 @@ Add your new repo as the origin:
 
 `git push -u origin master`
 
-## Setup Textile Project
+## Install the Textile CLI
 
-`textile project init <your blog name>`
+You'll need to install Textile on your local machine. To do so, download the binary for your computer here, [https://github.com/textileio/textile/releases/latest](https://github.com/textileio/textile/releases/latest).
 
-This will create a hidden folder in your repo `.textile/`. You need to add and commit this folder to your repo and be sure to push it to GitHub.
+_Apple users: Textile is not signing the build with Apple developer keys, you'll need to authorize the app to run in your security settings. Download the Darwin build and go through the install steps (untar, cd, `./install`). Next, run a Textile command once, e.g. `textile --help`. This will fail due to permissions. Go to System Preferences -> Security. In the bottom right, click to allow Textile to run anyway. Run `textile --help` again, confirm your decision, and you'll not be prompted again._
 
-`git add .textile`
+## Create a Textile login and team
 
-`git commit -sam 'textile: added project config`
+Textile uses passwordless login for all users, giving them remote IPFS pinning for their projects.
+
+`textile login`
+
+Follow the instructions.
+
+`textile whoami`
+
+Should now show you your account. If you think you'll want to collaborate with others, you should create a team and then enter you team before creating projects and buckets.
+
+`textile team add <NAME>`
+
+Followed by
+
+`textile switch`
+
+## Initialize a Textile Project
+
+All Buckets are part of Projects. To make Project management easy, you can initialize a Project in the any directory. Then, each time you are working in that directory with Textile, it will know which project it is working with.
+
+`cd <GATSBY PROJECT DIRECTORY>`
+
+`textile project init <UNIQUE PROJECT NAME>`
+
+This will create a file `./.textile/config.yml`. If you are using Git, you should commit this file to your code history.
 
 ## Setup GitHub Variables
 
