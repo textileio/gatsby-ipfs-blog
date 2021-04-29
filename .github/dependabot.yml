@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+    timezone: America/Los_Angeles
+  open-pull-requests-limit: 25
+  ignore:
+  - dependency-name: gatsby-image
+    versions:
+    - 3.0.0
+    - 3.1.0
+    - 3.2.0
+    - 3.3.0
+  - dependency-name: react
+    versions:
+    - 17.0.1
